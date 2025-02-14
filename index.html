@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025💖</title>
+    <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Heart_symbol_red.svg/1024px-Heart_symbol_red.svg.png">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: pink;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            animation: backgroundPulse 5s infinite alternate;
+        }
+        @keyframes backgroundPulse {
+            from {
+                background-color: pink;
+            }
+            to {
+                background-color: lightcoral;
+            }
+        }
+        .container {
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+            max-width: 90%;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        h1 {
+            font-size: 3.5rem;
+            color: white;
+            text-shadow: 2px 2px 5px red;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        .heart-btn {
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            color: white;
+            background-color: red;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        .heart-btn:hover {
+            background-color: darkred;
+        }
+        .message {
+            display: none;
+            font-size: 3.5rem;
+            color: white;
+            margin-top: 20px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        .heart {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-image: url('https://media.tenor.com/xxPgBuwmddQAAAAi/cat.gif');
+            background-size: cover;
+            animation: fall linear infinite;
+        }
+        .cat_spining {
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            background-image: url('https://media.tenor.com/sbfBfp3FeY8AAAAj/oia-uia.gif');
+            background-size: cover;
+            vertical-align: middle;
+        }
+        .cat_flower {
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            background-image: url('https://media.tenor.com/p96XUHeS4q8AAAAj/peach-and-goma-goma.gif');
+            background-size: cover;
+            vertical-align: middle;
+        }
+        .cat_smile {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-image: url('https://media.tenor.com/rR4Pk0gu1YcAAAAj/peach-goma-peach-and-goma.gif');
+            background-size: cover;
+            vertical-align: middle;
+        }
+        @keyframes fall {
+            from {
+                transform: translateY(-10vh) rotate(0deg);
+            }
+            to {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .heart-btn {
+                font-size: 1rem;
+                padding: 8px 16px;
+            }
+            .message {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <audio id="bg-music" loop>
+        <source src="./src/cat_blue.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    <div class="container">
+        <div class="cat_spining"></div>
+        <br><br>
+        <h1 class="message" id="loveMessage">Happy Valentine’s Day! Orvy<span class="cat_flower"></span></h1>
+        <button class="heart-btn" onclick="showLove()">Meow Meow (Klik Aku!) <span class="cat_smile"></span></button>
+    </div>
+
+    <script>
+        function showLove() {
+            document.getElementById("loveMessage").style.display = "block";
+            document.getElementById("bg-music").play();
+            for (let i = 0; i < 20; i++) {
+                let heart = document.createElement("div");
+                heart.classList.add("heart");
+                heart.style.left = Math.random() * 100 + "vw";
+                heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+                document.body.appendChild(heart);
+                setTimeout(() => heart.remove(), 30000);
+            }
+        }
+    </script>
+</body>
+</html>
